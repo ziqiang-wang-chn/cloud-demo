@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: provider-qidai
+  cloud:
+    nacos:
+      discovery:
+        username: nacos
+        password: nacos
+        server-addr: localhost:8848
+        namespace: public
+      config:
+        contextPath: /nacos
+dubbo:
+  application:
+    name: dubbo-provider-qidai
+  registry:
+    address: nacos://localhost:8848
